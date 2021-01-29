@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { getPlayer } from '../store/actions/player';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+import Container from '@material-ui/core/Container';
 
 class Search extends Component {
 
@@ -33,6 +34,7 @@ class Search extends Component {
     render() {
         const { searchTerm, error } = this.state;
         return (
+            <Container>
             <form onSubmit={this.searchPlayer}>
                 <div>
                     <br></br>
@@ -46,6 +48,7 @@ class Search extends Component {
                 </div>
                 {error && <p>{error}</p>}
             </form>
+            </Container>
         )
     }
 }

@@ -12,6 +12,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
+import MenuIcon from '@material-ui/icons/Menu';
 import Link from 'react-dom';
 
 const useStyles = makeStyles((theme) => ({
@@ -43,14 +44,14 @@ export default function PickTeam() {
   return (
     <div>
       <Button variant="outlined" color="secondary" onClick={handleClickOpen}>
-        Pick Team
+        < MenuIcon /> 
       </Button>
       <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
         <AppBar className={classes.appBar}>
           <Toolbar>
             
             <Typography variant="h6" className={classes.title}>
-                Teams
+                Menu
             </Typography>
             <IconButton edge="start" color="inherit" onClick={handleClose} aria-label="close">
               <CloseIcon />
@@ -58,12 +59,19 @@ export default function PickTeam() {
           </Toolbar>
         </AppBar>
         <List>
-          <ListItem button>
-            <ListItemText primary="Cleveland Cavaliers"  />
+        <ListItem button>
+            <a href='/'>Home</a>
           </ListItem>
           <Divider />
           <ListItem button>
-            <ListItemText primary="Toronto Raptors" />
+            <a href='/players'>Search Players</a>
+          </ListItem>
+          <Divider />
+          <ListItem button>
+            <a href='/teamlist'>Search Teams</a>
+          </ListItem>
+          <Divider />
+          <ListItem button>
           </ListItem>
         </List>
       </Dialog>

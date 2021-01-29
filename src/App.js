@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 import './App.css';
-import Player from './components/Player';
-import Search from './components/Search';
+import Index from './pages/Index';
+import TeamList from './pages/TeamList';
+import Players from './pages/Players';
+import { Route, Switch, BrowserRouter as Router } from "react-router-dom";
 import Header from './components/Header';
+
+
 
 
 class App extends Component {
   render() {
     return (
-      <div>
+      <Router>
         <Header />
-        <section>
-          
-            <Search />
-            <h1 style={{ fontSize: '30px', color: 'white', float: 'right' }}>NBA Stats API</h1>
-        </section>
-        
-        <div className='main--container'>
-          <Player />
-        </div>
-      </div>
+        <Switch>
+          <Route path='/' exact component={Index} />
+          <Route path='/players' exact component={Players} />
+          <Route path='/teamlist' exact component={TeamList} />
+        </Switch>
+      </Router>
     );
   }
 }

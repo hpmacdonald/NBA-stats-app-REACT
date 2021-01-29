@@ -1,8 +1,7 @@
 import React from 'react';
 import PickTeam from './PickTeam';
-
+import { Link } from 'react-router-dom';
 import SportsBasketballIcon from '@material-ui/icons/SportsBasketball';
-
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -30,15 +29,15 @@ export default function ButtonAppBar() {
     <div className={classes.root}>
       <AppBar position="static">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton>
           <Typography variant="h6" className={classes.title}>
-            NBA Stats < SportsBasketballIcon />
+            <Link to='/'><SportsBasketballIcon /></Link>
           </Typography>
           <Button color="inherit"><PickTeam /></Button>
         </Toolbar>
       </AppBar>
+      <section>
+        <h1 style={{ color:'white', fontSize:'40px' }}>NBA Stats App</h1>
+      </section>
     </div>
   );
 }
