@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
-import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
@@ -13,7 +12,6 @@ import Typography from '@material-ui/core/Typography';
 import CloseIcon from '@material-ui/icons/Close';
 import Slide from '@material-ui/core/Slide';
 import MenuIcon from '@material-ui/icons/Menu';
-import Link from 'react-dom';
 
 const useStyles = makeStyles((theme) => ({
   appBar: {
@@ -44,12 +42,11 @@ export default function PickTeam() {
   return (
     <div>
       <Button variant="outlined" color="secondary" onClick={handleClickOpen}>
-        < MenuIcon /> 
+        <MenuIcon /> 
       </Button>
       <Dialog fullScreen open={open} onClose={handleClose} TransitionComponent={Transition}>
         <AppBar className={classes.appBar}>
-          <Toolbar>
-            
+          <Toolbar>     
             <Typography variant="h6" className={classes.title}>
                 Menu
             </Typography>
@@ -58,22 +55,24 @@ export default function PickTeam() {
             </IconButton>
           </Toolbar>
         </AppBar>
+
+        {/* APP BAR LINKS BELOW */}
+
         <List>
-        <ListItem button>
+          <ListItem button>
             <a href='/'>Home</a>
           </ListItem>
-          <Divider />
+            <Divider />
           <ListItem button>
             <a href='/players'>Search Players</a>
           </ListItem>
-          <Divider />
+            <Divider />
           <ListItem button>
             <a href='/teamlist'>Search Teams</a>
           </ListItem>
-          <Divider />
-          <ListItem button>
-          </ListItem>
+            <Divider />
         </List>
+
       </Dialog>
     </div>
   );

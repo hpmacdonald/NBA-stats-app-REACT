@@ -7,7 +7,7 @@ const Players = () => {
         <div>
             <Search />
             <div className='main--container'>
-            <Player />
+                <Player />
             </div>
         </div>
     )

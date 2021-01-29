@@ -35,19 +35,16 @@ class Search extends Component {
         const { searchTerm, error } = this.state;
         return (
             <Container>
-            <form onSubmit={this.searchPlayer}>
-                <div>
+                <form onSubmit={this.searchPlayer}>
                     <br></br>
-                <TextField style={{backgroundColor: 'white' }}className="text--field" id="filled-basic" label="Filled" variant="filled" type="text" value={searchTerm} onChange={this.handleChange} />
-                <br></br>
-                <br></br>
-                <Button variant="contained"  type="submit" color="primary">
-                    search
-                </Button>
-                    
-                </div>
-                {error && <p>{error}</p>}
-            </form>
+                    <TextField style={{backgroundColor: 'white' }}className="text--field" id="filled-basic" label="Filled" variant="filled" type="text" value={searchTerm} onChange={this.handleChange} />
+                    <br></br>
+                    <br></br>
+                    <Button variant="contained"  type="submit" color="primary">
+                        search
+                    </Button>
+                    {error && <p>{error}</p>}
+                </form>
             </Container>
         )
     }

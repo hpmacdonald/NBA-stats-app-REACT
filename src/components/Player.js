@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container } from 'react-bootstrap'
 import PlayerPhoto from './PlayerPhoto';
 import StatBox from './StatBox';
 
@@ -18,19 +18,17 @@ class Player extends Component {
         return (
             <div>
                 <Container> 
-                
                     <div className="left-box">
-                    {image && <PlayerPhoto url={image} name={name} />}
+                        {image && <PlayerPhoto url={image} name={name} />}
                     </div>
+
                     <div className="right-box">
-                    <h1>{team_name}</h1>
-                        <div className='stat--box--list'>{statBoxList}</div>
+                        <h1>{team_name}</h1>
+                        <div className='stat--box--list'>
+                            {statBoxList}
+                        </div>
                     </div>
-                   
                 </Container>
-                
-                    
-    
             </div>
         )
     }
